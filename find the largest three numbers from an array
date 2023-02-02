@@ -1,0 +1,52 @@
+1]approach 1
+solution:
+
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    
+    int n;
+    cin>>n;
+    
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    
+    int first=arr[0];
+    int sec=0;
+    int third=0;
+    
+    for(int i=0;i<n;i++){
+        if(first<arr[i]){
+            sec=first;
+            first=arr[i];
+            
+        }
+        
+    }
+    
+    for(int i=0;i<n;i++) {
+        if(third<sec && sec<first && sec>arr[i]) {
+            // third=sec;
+            third=arr[i];
+        }
+    }
+    
+    cout<<first<<" "<<sec<<" "<<third;
+    return 0;
+}
+
+
+2]approach 2
+
+sort(arr,arr+n);
+    
+    int first=arr[n-1];
+    int sec=arr[n-2];
+    int third=arr[n-3];
+    
+    cout<<first<<" "<<sec<<" "<<third;
+    return 0;
