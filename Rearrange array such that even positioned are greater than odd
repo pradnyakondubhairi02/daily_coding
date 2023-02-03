@@ -1,0 +1,54 @@
+Given an array A of n elements, rearrange the array according to the following relations :
+ A[i] >= A[i-1]  , if i is even.
+ A[i] <= A[i-1]  , if i is odd.[Considering 1-indexed array]
+Return the resultant array.
+
+
+class Solution{
+    public:
+        vector<int> assign(int a[], int n)
+    {
+        // Complete teh function
+        vector<int>ans(n,0);
+        
+        sort(a,a+n);
+        
+        int k=1;
+        
+        if(n%2==0){
+            
+            for(int i=n/2; i<n; i++){
+                
+                ans[k]=a[i];
+                k=k+2;
+            }
+            
+            k=0;
+            
+            for(int i=0; i<(n/2); i++){
+                
+                ans[k]=a[i];
+                k=k+2;
+            }
+        }
+        else{
+            
+            for(int i=(n/2)+1; i<n; i++){
+                
+                ans[k]=a[i];
+                k=k+2;
+            }
+            
+            k=0;
+            
+            for(int i=0; i<=(n/2); i++){
+                
+                ans[k]=a[i];
+                k=k+2;
+            }
+            
+        }
+        return ans;
+        
+    }
+};
