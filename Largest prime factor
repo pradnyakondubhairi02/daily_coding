@@ -1,0 +1,54 @@
+//{ Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std;
+
+// } Driver Code Ends
+class Solution{
+public: 
+
+    bool isPrime(int n){
+        if(n==1){
+            return 0;
+        }
+        else{
+            for(int i=2;i<=sqrt(n);i++){
+                if(n%i==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    
+    long long int largestPrimeFactor(int N){
+     
+     long long maxi=INT_MIN;
+         for(long long  i=2;i<=N/2;i++){
+             if(isPrime(i) && N%i==0){
+                 maxi=max(maxi,i);
+             }
+         } 
+         
+         if(maxi==0){
+             return N;
+         }
+         return maxi;
+    }
+};
+
+//{ Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.largestPrimeFactor(N) << endl;
+    }
+    return 0; 
+}
+// } Driver Code Ends
