@@ -1,6 +1,4 @@
-//{ Driver Code Starts
-// C++ program to Print root to leaf path WITHOUT
-// using recursion
+
 #include <bits/stdc++.h>
 using namespace std;
 
