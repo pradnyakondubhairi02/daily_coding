@@ -2,9 +2,6 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-
-
 class Solution{
 public:
     int inSequence(int A, int B, int C){
