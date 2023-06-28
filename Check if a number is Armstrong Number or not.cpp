@@ -16,7 +16,7 @@ int main(){
 	 }
 	 
 	 if(temp==ans){
-	 	cout<<"yes";
+	 	cout<<"yes"<<endl;
 	 }
 	 else{
 	 	cout<<"no";
